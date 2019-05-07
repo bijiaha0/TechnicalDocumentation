@@ -1,0 +1,20 @@
+# python创建虚拟环境
+python3 -m venv tutorial-env
+# 激活虚拟环境
+source tutorial-env/bin/activate
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
