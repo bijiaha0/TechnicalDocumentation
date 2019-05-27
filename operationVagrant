@@ -19,6 +19,54 @@ vagrant destroy
 
 y
 
+docker-machine create demo
+
+docker-machine ls
+#进入
+docker-machine ssh demo
+
+docker version
+
+exit
+
+docker-machine create demo1
+docker-machine ls
+docker-machine stop demo1
+docker-machine stop demo
+docker-machine start demo
+#另外一种方式
+docker-machine env demo
+eval $(docker-machine env demo)
+
+docker version
+#删掉
+docker-machine rm
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
