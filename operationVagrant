@@ -1,0 +1,31 @@
+
+vagrant init centos/7
+
+vagrant up
+#进入里面
+vagrant ssh
+
+# 退出
+exit
+
+vagrant status
+#停止
+vagrant halt
+
+vagrant status
+
+#删掉
+vagrant destroy
+
+y
+
+
+
+
+
+
+
+
+
+
+
