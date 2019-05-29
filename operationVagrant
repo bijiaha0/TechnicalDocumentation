@@ -1,24 +1,22 @@
-
+#vagrant常用操作命令#################
+#通过vagrant创建虚拟机
 vagrant init centos/7
-
+# 通过vagrant启动虚拟机
 vagrant up
-#进入里面
+#通过ssh进入所创建的虚拟机里面
 vagrant ssh
-
+sudo yum update
 # 退出
 exit
-
+clear
+# 查看状态
 vagrant status
 #停止
 vagrant halt
-
 vagrant status
-
-#删掉
+#删掉虚拟机
 vagrant destroy
-
-y
-
+#docker安装操作####################
 docker-machine create demo
 
 docker-machine ls
@@ -41,6 +39,8 @@ eval $(docker-machine env demo)
 docker version
 #删掉
 docker-machine rm
+
+
 
 
 
