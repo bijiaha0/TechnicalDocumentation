@@ -72,6 +72,7 @@ sudo docker run hello-world
 2、分层的，并且每一层都可以添加改变删除文件，成为一个新的image
 3、不同的image可以共享相同的layer
 4、image本身是read-only的
+docker image rm IMAGE ID
 
 docker hub是一个仓库。
 
@@ -100,6 +101,37 @@ docker run hello-world
 docker container ls
 # 当前所有的容器（包括正在运行的和退出的）
 docker container ls -a
+# 删除容器
+docker container rm CONTAINER ID
+# 开启交互式
+docker run -it centos
+#列出所有的container id
+docker container ls -aq
+docker rm $(docker container ls -aq)
+#把states=exited的容器列出来
+docker container ls -f "states=exited"
+
+#把states=exited的容器的id列出来
+docker container ls -f "states=exited" -q
+docker rm $(docker container ls -f "states=exited" -q)
+#将container重新commited成一个image   ------>   docker container commit
+docker commit NAMES xiaopeng/163/centos-vim
+# 比较安全的做法 通过docker file 生成一个临时的container，最后生成一个image
+# Dockerfile
+```
+FROM centos
+RUN yum install -y vim
+```
+docker image build -t ixaopeng163/centos-vim-new .
+
+
+
+
+
+
+
+
+
 
 
 
