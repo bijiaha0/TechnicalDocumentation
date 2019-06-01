@@ -115,7 +115,8 @@ docker run -d --name=demo xiaopeng163/flask-hello-world
 docker inspect CONTAINER ID
 # 查看容器运行过程中的日志
 docker logs CONTAINER ID
-
+# 带参数执行镜像
+docker run -it xiaopeng163/ubuntu-stress --vm 1 --verbose
 
 
 
