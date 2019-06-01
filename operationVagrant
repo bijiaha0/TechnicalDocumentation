@@ -67,6 +67,45 @@ sudo systemctl start docker
 
 sudo docker run hello-world
 
+# 什么是Image
+1、文件和meta data的集合（root filesysytem）
+2、分层的，并且每一层都可以添加改变删除文件，成为一个新的image
+3、不同的image可以共享相同的layer
+4、image本身是read-only的
+
+docker hub是一个仓库。
+
+docker pull ubuntu
+
+# 去掉执行docker命令的时候，sudo权限
+sudo groupadd docker
+sudo gpasswd -a vagrant docker
+# docker 服务重启
+sudo service docker restart
+#退出
+exit
+#重进
+vagrant ssh
+
+docker pull hello-world
+docker run hello-world
+
+# 什么是Containerr
+1、通过Image创建
+2、在Image layer之上建立一个container layer（可读写）
+3、类比面向对象：类与实例
+4、Image负责app的存储和分发，Container负责运行app
+
+# 当前本地正在运行的容器
+docker container ls
+# 当前所有的容器（包括正在运行的和退出的）
+docker container ls -a
+
+
+
+
+
+
 
 
 
