@@ -1,0 +1,56 @@
+# Dockerfile语法梳理及最佳实践
+FROM centos #使用base image
+
+# LABEL
+Metadata不可少
+
+# RUN
+每运行一次run，对于image来讲，都会生成新的一层。
+RUN yum update && yum install -y vim \
+    python-dev  #反斜线换行
+		
+为了美观，复杂的RUN请用反斜线换行！
+避免无用分层，合并多条命令成一行！
+
+# WORKDIR
+WORKDIR /test #如果没有test目录，会自动创建test目录
+WORKDIR demo
+RUN pwd #输出结果应该是/test/demo
+
+用WORKDIR，不要用RUN cd!
+尽量使用绝对目录！
+
+# ADD and COPY
+ADD hello / #添加到根目录
+ADD test.tar.gz /   #添加到根目录并解压缩
+
+WORKDIR /root
+ADD hello test/  #/root/test/hello
+
+大部分情况，COPY优于ADD！
+ADD除了COPY还有额外功能（解压）！
+添加远程文件/目录请使用curl或者wget！
+
+ENV
+ENV MYSQL_VERSION 5.6 #设置常量
+RUN yum install -y mysql-server="${MYSQL_VERSION}" \
+		&& rm -rf /var/lib/apt/lists/* # 引用常量
+ENV MYSQL_VERSION 5.6 #设置常量
+尽量使用ENV增加可维护性！
+
+VOLUME AND EXPOSE(存储和网络)
+
+CMD AND ENTRYPOINT
+
+官方Dockerfile demo
+https://github.com/bijiaha0/mysql/tree/master/5.7
+
+
+
+
+
+
+
+
+
+
