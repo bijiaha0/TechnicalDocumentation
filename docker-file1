@@ -45,6 +45,72 @@ CMD AND ENTRYPOINT
 官方Dockerfile demo
 https://github.com/bijiaha0/mysql/tree/master/5.7
 
+RUN CMD ENTRYPOINT
+
+RUN:执行命令并创建新的 Image Layer
+CMD:设置容器启动后默认执行的命令和参数
+ENTRYPOINT:设置容器启动时运行的命令
+
+Shell和Exec格式
+Shell格式
+FROM centos
+ENV name Docker
+ENTRYPOINT echo "hello $name"
+
+Exec格式
+FROM centos
+ENV name Docker
+ENTRYPOINT ["/bin/bash","-c","echo hello $name"]
+
+vim Dockerfile
+docker build -t xiaopeng163/centos-entrypoint-exec-new .
+docker run xiaopeng163/centos-entrypoint-exec-new
+
+
+### CMD
+1、容器启动时默认执行的命令；
+2、如果docker run指定了其他命令，CMD命令被忽略；
+3、如果定义了多个CMD，只有最后一个会执行。
+FROM centos 
+ENV name Docker
+CMD echo "hello $name"
+
+docker run [image] 输出 hello docker
+docker run -it [image] /bin/bash 不会有输出。
+
+### ENTRYPOINT
+1、让容器以应用程序或者服务的形式运行
+2、不会被忽略，一定会执行
+3、最佳实践：写一个shell脚本作为entrypoint
+
+``` shell
+COPY docker-entrypoint.sh /usr/local/bin
+ENTRYPOINT ["docker-entrypoint.sh"]
+EXPOSE 27017
+cmd ["mongod"]
+
+```
+# docker镜像发布
+docker login
+Username:xiaopeng163
+Password:123456
+docker push xiaopeng163/hello-world:latest
+
+# 进入正在运行的环境
+docker exec -it CONTAINER ID /bin/bash
+
+# 运行中的容器，它的ip地址
+docker exec -it CONTAINER ID ip a
+
+# 停掉正在运行的容器
+docker container stop CONTAINER ID
+
+
+
+
+
+
+
 
 
 
