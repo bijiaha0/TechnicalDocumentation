@@ -105,6 +105,17 @@ docker exec -it CONTAINER ID ip a
 # 停掉正在运行的容器
 docker container stop CONTAINER ID
 
+# 启动运行过的容器
+docker container start CONTAINER ID
+
+# 给容器命名
+docker run -d --name=demo xiaopeng163/flask-hello-world
+
+# 查看容器的信息
+docker inspect CONTAINER ID
+# 查看容器运行过程中的日志
+docker logs CONTAINER ID
+
 
 
 
