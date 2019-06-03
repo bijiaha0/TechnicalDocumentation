@@ -1,0 +1,16 @@
+实体
+  @Entity、@MappedSuperclass
+  @Table(name)
+  
+主键
+  @Id
+  @GeneratedValue(strategy,generator)
+  @SequenceGenerator(name,sequenceName)
+  
+映射
+  @Column(name,nullable,length,insertable,updatable)
+  @JoinTable(name)、@JoinColumn(name)
+  
+关系
+  @OneToOne、@OneToMany、@MangToOne、@MangToMany
+  @OrderBy
