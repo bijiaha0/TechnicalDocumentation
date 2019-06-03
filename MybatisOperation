@@ -21,3 +21,32 @@ mybatis.configuration.map-underscore-to-camel-case=true
 
   Java程序
   
+
+
+配置 MyBatis Generator
+
+generatorConfiguration
+  context
+    jdbcConnection
+    javaModelGenerator
+    sqlMapGenerator
+    javaClientGenerator (ANNOTATEDMAPPER / XMLMAPPER / MIXEDMAPPER)
+    table
+   
+ 
+ 生成时可以使用的插件
+ 内置插件都在 org.mabatis.generator.plugins 包中
+  FluentBuilderMethodsPlugin
+  ToStringPlugin
+  SerializablePlugin
+  RowBoundsOlugin
+  
+  
+  使用生成的对象
+    简单操作，直接使用生成的 xxxMapper的方法
+    复杂查询，使用生成的 xxxExample 对象
+    
+    
+  
+  
+ 
