@@ -4,13 +4,15 @@ Java Config相关注解
   @ComponentScan
   @Bean
   @ConfigurationProperties
+  
+  
 定义相关注解
   @Component/@Repository/@Service
   @Controller/@RestController
   @RequestMapping
-注入相关注解
-  @Autowired/@Qualifier/@Resource
-  @Value
   
-
-
+  
+注入相关注解
+  @Autowired【按照类型来做一个查找，注入进来】/@Qualifier【指定bean的名字来注入】/@Resource【根据名字来注入】
+  @Value【在bean里面注入一些常量，表达式】
+  
