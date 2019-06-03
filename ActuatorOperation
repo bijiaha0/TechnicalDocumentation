@@ -1,0 +1,16 @@
+Actuator提供的一些好用的Endpoint
+
+  /actuator/health     --->  健康检查
+  /actuator/beans      --->  查看容器中的所有bean
+  /actuator/mapping    ---> 查看Web的URL映射
+  /actuator/env        ---> 查看环境信息
+  
+如何解禁 Endpoint
+默认  /actuator/health 和/actuator/info 可Web访问
+解禁所有Endpoint
+application.properties/application.yml
+  management.endpoints.web.exposure.include=*
+  
+
+
+  
