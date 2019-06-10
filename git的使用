@@ -1,9 +1,4 @@
 
-git的使用方法见下面这篇博客[use git] [1].
-
-[1]: https://www.cnblogs.com/jajian/p/8471989.htm        "git"
-
-
 git add .      //表示将拷贝的该目录中的所有文件本地一个叫staging area的暂存区。
 
 git commit -m "说明"//git commit 执行将add到staging area中的文件提交到本地仓库，后面的说明是对此次commit的说明。
@@ -11,27 +6,6 @@ git commit -m "说明"//git commit 执行将add到staging area中的文件提交
 
 git push origin testing-shopping//将本地仓库的文件推至对应的远程(remote)仓库，git push的两个参数:origin代表远端仓库的名字，master代表分支的名字
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+具体参见的博客地址：https://www.cnblogs.com/jajian/p/8471989.htm
 
 
