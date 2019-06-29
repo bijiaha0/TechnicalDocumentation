@@ -1,0 +1,67 @@
+参考博客地址：https://www.cnblogs.com/iyangyuan/archive/2013/04/09/3011274.html
+
+/**
+ * 测试实体模型
+ *
+ */
+public class User {
+	private String uid;
+	private String pwd;
+	
+	public String getUid() {
+		return uid;
+	}
+	public void setUid(String uid) {
+		this.uid = uid;
+	}
+	public String getPwd() {
+		return pwd;
+	}
+	public void setPwd(String pwd) {
+		this.pwd = pwd;
+	}
+	
+}
+
+
+public class Generic {
+	/**
+	 * 泛型方法
+	 * @param <T> 声明一个泛型T
+	 * @param c 用来创建泛型对象
+	 * @return
+	 * @throws InstantiationException
+	 * @throws IllegalAccessException
+	 */
+	public <T> T getObject(Class<T> c) throws InstantiationException, IllegalAccessException{
+		//创建泛型对象
+		T t = c.newInstance();
+		return t;
+	}
+}
+
+
+/**
+ * 泛型调用演示
+ *
+ */
+public class GenericTest {
+	public static void main(String[] args) throws InstantiationException, IllegalAccessException, ClassNotFoundException{
+		
+		Generic generic = new Generic();		
+		//调用泛型方法
+		Object obj = generic.getObject(Class.forName("com.cnblogs.test.User"));
+		//判断obj的类型是否是指定的User类型
+		System.out.println(obj instanceof User);
+	}
+}
+
+
+
+
+
+
+
+
+
+
