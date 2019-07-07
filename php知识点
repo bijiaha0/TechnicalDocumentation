@@ -152,5 +152,9 @@ continue语句作用到switch的作用类似于break
    打印处理：print()、pringtf()、print_r()、echo、sprintf()、var_dump()、var_export()
    序列化以及反序列函数：serialize()、unserialize()
    字符串处理函数：implode()、explode()、join()、strrev()、trim()、itrim()、rtrim()、strstr()、number_format()
+   数组处理函数： array_keys()、array_values()、array_diff()、array_intersect()、array_merge()、array_shift()、
+                array_unshift()、array_pop()、array_push()、sort()等。
+                
+                
    
    
