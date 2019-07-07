@@ -78,3 +78,6 @@ if(exp1){
 
 switch...case...
 和if不同的是，switch后面的控制表达式的数据类型只能是整形、浮点类型或者字符串。
+
+continue语句作用到switch的作用类似于break
+跳出switch外的for循环，可以使用continue2。
