@@ -156,5 +156,16 @@ continue语句作用到switch的作用类似于break
                 array_unshift()、array_pop()、array_push()、sort()等。
                 
                 
+ 正则表达式的作用：分割、查找、匹配、替换字符串。
+ 分隔符：正斜线(/)、hash符号(#)以及取反符号(~)
+ 通用原子：\d、\D、\w、\W、\s、\S
+ 元字符：. * ^ $ + {n} {n,} {n,m} [] () [^] | [-]
+ 模拟修正符：i m e s U x A D u
+ 
+ 
+ 后向引用：
    
+ 
+ 贪婪模式：
+ 
    
