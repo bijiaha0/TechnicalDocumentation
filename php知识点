@@ -136,6 +136,26 @@ continue语句作用到switch的作用类似于break
        echo myFunc();-------->100
 
 外部文件的导入
+  include/require语句包含并运行指定文件。
+  如果给出路径名，按照路径来找；否则从include_path中查找。
+  如果include_path中也没有，则从调用脚本文件所在的目录和当前工作目录下寻找。
+  当一个文件被包含时，其中所包含的代码继承了include所在行的变量范围。
+  加载过程中未找到文件则include结果会发出一条警告；这一点和require不同，后者会发出一个致命错误。
+  require在出错时产生E_COMPILE_ERROR级别的错误。
+  换句话说将导致脚本中止而include只产生警告(E_WARNING),脚本会继续运行。
+  require(include)/require_one(include_once)唯一区别是PHP会检查该文件是否已经被包含过，如果是则不会再次包含。
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
 系统内置函数
    
    
