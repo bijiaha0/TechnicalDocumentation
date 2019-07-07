@@ -144,18 +144,9 @@ continue语句作用到switch的作用类似于break
   require在出错时产生E_COMPILE_ERROR级别的错误。
   换句话说将导致脚本中止而include只产生警告(E_WARNING),脚本会继续运行。
   require(include)/require_one(include_once)唯一区别是PHP会检查该文件是否已经被包含过，如果是则不会再次包含。
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-
+ 
 
 系统内置函数
+   时间日期函数：date()、strtotime()、mktime()、time()、microtime()、date_default_timezone_set()
    
    
