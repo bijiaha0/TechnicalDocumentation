@@ -148,5 +148,9 @@ continue语句作用到switch的作用类似于break
 
 系统内置函数
    时间日期函数：date()、strtotime()、mktime()、time()、microtime()、date_default_timezone_set()
+   IP处理函数：ip2long()、long2ip()
+   打印处理：print()、pringtf()、print_r()、echo、sprintf()、var_dump()、var_export()
+   序列化以及反序列函数：serialize()、unserialize()
+   字符串处理函数：implode()、explode()、join()、strrev()、trim()、itrim()、rtrim()、strstr()、number_format()
    
    
