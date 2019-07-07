@@ -14,7 +14,12 @@ PHP字符串的定义方式以及各自区别：
    $sql = 'SELECT * FROM user WHERE name = \".name.'\";
 
 
-
+   Heredoc 类似于双引号
+   Newdoc 类似于单引号
+   两者都用来处理大文本
+   
+   
+   
 
 
 
