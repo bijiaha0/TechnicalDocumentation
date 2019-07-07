@@ -29,7 +29,8 @@ PHP字符串的定义方式以及各自区别：
     超全局数组
     $GLOBALS、$_GET、$_POST、$_REQUEST、$_SESSION、$_COOKIE、$_FILES、$_ENV
   
-
+  NULL的三种情况
+    直接赋值为NULL、未定义的变量、unset销毁的变量
 
 
 
