@@ -10,6 +10,8 @@ PHP字符串的定义方式以及各自区别：
    
  单引号的效率要高于双引号。
 
+   $str="abcedf'{$a}'gh"-----> abcdef$a的值gh
+   $sql = 'SELECT * FROM user WHERE name = \".name.'\";
 
 
 
