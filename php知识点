@@ -68,3 +68,13 @@ if......elseif
   在elseif语句中只能有一个表达式为true，即在elseif语句中只能有一个语句块被执行，多个elseif从句是排斥关系。
   使用elseif语句有一个基本原则，总把优先范围小的条件放在前面处理。
 
+
+if(exp1){
+}elseif(exp2){
+}elseif(exp3){
+}else{
+}
+
+
+switch...case...
+和if不同的是，switch后面的控制表达式的数据类型只能是整形、浮点类型或者字符串。
