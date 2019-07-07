@@ -31,6 +31,9 @@ PHP字符串的定义方式以及各自区别：
   
   NULL的三种情况
     直接赋值为NULL、未定义的变量、unset销毁的变量
+    
+  常量---定义：const、define
+             const更快，是语言结构，define是函数。
 
 
 
