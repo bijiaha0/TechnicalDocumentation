@@ -168,4 +168,118 @@ continue语句作用到switch的作用类似于break
  
  贪婪模式：
  
+ 
+ static知识点的介绍：
+     1、全局变量：在程序中都可以使用的变量称为全局变量。
+     <?php  
+    global $global_nums;
+    //初始化
+    $global_nums = 0;
+    Class Child {
+
+        public $name;
+        function __construct($name) {
+            $this -> name = $name;
+        }
+
+        public function join_game() {
+            //声明一下使用全局变量
+            global $global_nums;
+            $global_nums++;
+            echo $this -> name."加入游戏<br/>";
+        }
+    }
+
+    $child1 = new Child("lizzy");
+    $child1 -> join_game();
+    $child2 = new Child("zxm");
+    $child2 -> join_game();
+    $child3 = new Child("hahha");
+    $child3 -> join_game();
+
+    echo "共".$global_nums."人参加游戏";
+?>
+   2、静态变量：在类中定义静态变量（访问修饰符（如public）stadic $变量名;）
+              如何访问静态变量：
+                 a、如果在类中访问，有两种方法：self::$静态变量名;或者 类名::$静态变量名;
+                 b、如果再类外访问：只有一种方法，类名::$静态变量名;
+                 注意：php中静态变量不能用this访问，不能用对象去访问。
+
+    <?php  
+
+    Class Child {
+
+        public $name;
+        //定义并初始化一个静态变量
+        public static $nums=0;
+        function __construct($name) {
+            $this -> name = $name;
+        }
+
+        public function join_game() {
+            
+            //引用静态变量
+            self::$nums++;
+            echo $this -> name."加入游戏<br/>";
+        }
+    }
+
+    $child1 = new Child("lizzy");
+    $child1 -> join_game();
+    $child2 = new Child("zxm");
+    $child2 -> join_game();
+    $child3 = new Child("hahha");
+    $child3 -> join_game();
+
+    echo "共".Child::$nums."人参加游戏";
+?>
+
+
+3、静态方法
+静态方法也叫类方法，静态方法是属于所有对象实例的，形式如下：访问修饰符(如public) static function 方法名() { }
+注意：
+1、 静态方法中不能访问非静态属性（变量），也就是static方法中不能用this 访问，无法识别this具体是哪个。
+2、普通的成员方法，既可以操作非静态变量，也可以操作静态变量。
+在类外部访问： 类名::类方法名 或者 对象名->类方法名
+在类内部访问： 类名::类方法名 或者 self::类方法名
+
+
+<?php
+
+    class Student {
+
+        public static $fee;
+        public $name;
+        //构造函数
+        function __construct($name) {
+            $this -> name = $name;
+        }
+
+        public static function startSchool($inputFee) {
+            self::$fee += $inputFee;
+        }
+
+        //获取总学费
+        public static function getAllFee() {
+            return self::$fee;
+        }
+    }
+
+    //1、通过类名调用静态方法
+    // Student::startSchool(340);
+    //2、通过对象调用静态方法
+    $stu1 = new Student("lizzy");
+    $stu1 -> startSchool(340);
+
+    $stu2 = new Student("zxm");
+    $stu2 -> startSchool(200);
+
+    echo "总学费是：".Student::getAllFee();
+?>
+
+
+
+
+
+
    
