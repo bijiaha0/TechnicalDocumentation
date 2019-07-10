@@ -317,6 +317,29 @@ continue语句作用到switch的作用类似于break
 箭头：是调用类中的函数【需要先实例化】；
 等于号箭头：定义数组用的。
 
+array_unique() 接受array作为输入并返回没有重复值的新数组。
+另一个方法是使用php的array_flip函数来间接的实现去重效果。
 
+<?php
+$arr =array("a"=>"a1","b"=>'b1',"c"=>"a2","d"=>"a1");
+$arr1 = array_flip($arr);
+print_r($arr1);//先反转一次,去掉重复值,输出Array ( [a1] => d[b1] => b [a2] => c )
+$arr2 = array_flip($arr1);
+print_r($arr2);//再反转回来,得到去重后的数组,输出Array([d] => a1 [b] => b1 [c] => a2)
+$arr3 = array_unique($arr);
+print_r($arr3);//利用php的array_unique函数去重,输出Array ( [a]=> a1 [b] => b1 [c] =>a2 )
+?>
+
+array_unique和array_flip间的区别
+   二种方法不同的是用array_flip得到的是重复元素最后的键和值,用array_unique得到的是两个重复元素第一个键和值。
+   
+   
+   
+   
+   
+   
+   
+   
+   
 
    
