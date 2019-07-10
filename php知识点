@@ -318,6 +318,23 @@ continue语句作用到switch的作用类似于break
 等于号箭头：定义数组用的。
 
 array_unique() 接受array作为输入并返回没有重复值的新数组。
+
+<?php
+$input = array("a"=> "green","red","b" =>"green","blue","red");
+$result = array_unique($input);
+print_r($result);
+?> 
+
+上例将输出：
+
+Array
+(
+    [a]=> green
+    [0]=> red
+    [1]=> blue
+) 
+
+
 另一个方法是使用php的array_flip函数来间接的实现去重效果。
 
 <?php
